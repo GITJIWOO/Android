@@ -38,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 // 얻어온 값을 로그로 찍어주세요.
                 Log.i("detect",result);
                 // 얻어온 값을 토스트로 찍어보세요.
-                Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
-
-                tv1.getText(result);
+                Toast.makeText(MainActivity.this, result,
+                                    Toast.LENGTH_SHORT).show();
+                // 텍스트뷰에 result 변수에 담긴 값 표출
+                tv1.setText(result);
+                tv1.setTextSize(40);
             }
         });
     }

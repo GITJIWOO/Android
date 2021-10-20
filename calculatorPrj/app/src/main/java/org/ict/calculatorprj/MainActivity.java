@@ -10,85 +10,116 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edit1, edit2;
-    Button plus, minus, division, multiplication;
-    TextView result;
+    //1. 부품 배치가 끝나면 제일 먼저 부품을 선언해줍니다.
+    // 같은 종류의 위젯은 한 줄에 몰아서 선언해도 상관없음
+    Button plus, minus, div, mul;
+    EditText leftVal, rightVal;
+    TextView leftTv, rightTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        edit1 = (EditText)findViewById(R.id.edit1);
-        edit2 = (EditText)findViewById(R.id.edit2);
-        plus = (Button)findViewById(R.id.plus);
-        minus = (Button)findViewById(R.id.minus);
-        division = (Button)findViewById(R.id.division);
-        multiplication = (Button)findViewById(R.id.multiplication);
-        result = (TextView)findViewById(R.id.result);
+        // 2. 배치된 부품을 자바 코드와 연결
+        plus = (Button)findViewById(R.id.plusBtn);
+        minus = (Button)findViewById(R.id.minusBtn);
+        div = (Button)findViewById(R.id.divBtn);
+        mul = (Button)findViewById(R.id.multiBtn);
+        leftVal = (EditText)findViewById(R.id.et1);
+        rightVal = (EditText)findViewById(R.id.et2);
+        leftTv = (TextView)findViewById(R.id.infoTv);
+        rightTv = (TextView)findViewById(R.id.resultTv);
 
+        // 3. 버튼별로 기능 부여하기
+        //  예시로 plus버튼만 설정
+        // plus버튼을 클릭했을때
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 왼쪽 입력창, 오른쪽 입력창 값 얻어오기
+                String lResult = leftVal.getText().toString();
+                String rResult = rightVal.getText().toString();
 
-                String value1 = edit1.getText().toString();
-                String value2 = edit2.getText().toString();
+                // 얻어온 값은 문자이므로 숫자로 바꿔서 더한 결과를 저장
+                int resultInt = Integer.parseInt(lResult) + Integer.parseInt(rResult);
 
-                int valResult = Integer.parseInt(value1) + Integer.parseInt(value2);
+                //결과값 화면에 출력하기
+                // int를 String으로 바꾸는 가장 쉬운 방법은 그냥 빈 문자열을 더하는것.
+                rightTv.setText(resultInt + "");
 
-                result.setText(valResult + "");
+                // 이 코드를 토대로 나머지 연산도 만들어주시고
+                // 다 된 분들은 더하기 연한 수 왼쪽, 오른쪽 입력창 값을 비워주세요.
+                leftVal.setText("");
+                rightVal.setText("");
 
-                edit1.setText("");
-                edit2.setText("");
             }
         });
 
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 왼쪽 입력창, 오른쪽 입력창 값 얻어오기
+                String lResult = leftVal.getText().toString();
+                String rResult = rightVal.getText().toString();
 
-                String value1 = edit1.getText().toString();
-                String value2 = edit2.getText().toString();
+                // 얻어온 값은 문자이므로 숫자로 바꿔서 더한 결과를 저장
+                int resultInt = Integer.parseInt(lResult) - Integer.parseInt(rResult);
 
-                int valResult = Integer.parseInt(value1) - Integer.parseInt(value2);
+                //결과값 화면에 출력하기
+                // int를 String으로 바꾸는 가장 쉬운 방법은 그냥 빈 문자열을 더하는것.
+                rightTv.setText(resultInt + "");
 
-                result.setText(valResult + "");
-
-                edit1.setText("");
-                edit2.setText("");
+                // 이 코드를 토대로 나머지 연산도 만들어주시고
+                // 다 된 분들은 더하기 연한 수 왼쪽, 오른쪽 입력창 값을 비워주세요.
+                leftVal.setText("");
+                rightVal.setText("");
             }
         });
 
-        division.setOnClickListener(new View.OnClickListener() {
+
+        mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 왼쪽 입력창, 오른쪽 입력창 값 얻어오기
+                String lResult = leftVal.getText().toString();
+                String rResult = rightVal.getText().toString();
 
-                String value1 = edit1.getText().toString();
-                String value2 = edit2.getText().toString();
+                // 얻어온 값은 문자이므로 숫자로 바꿔서 더한 결과를 저장
+                int resultInt = Integer.parseInt(lResult) * Integer.parseInt(rResult);
 
-                int valResult = Integer.parseInt(value1) / Integer.parseInt(value2);
+                //결과값 화면에 출력하기
+                // int를 String으로 바꾸는 가장 쉬운 방법은 그냥 빈 문자열을 더하는것.
+                rightTv.setText(resultInt + "");
 
-                result.setText(valResult + "");
-
-                edit1.setText("");
-                edit2.setText("");
+                // 이 코드를 토대로 나머지 연산도 만들어주시고
+                // 다 된 분들은 더하기 연한 수 왼쪽, 오른쪽 입력창 값을 비워주세요.
+                leftVal.setText("");
+                rightVal.setText("");
             }
         });
 
-        multiplication.setOnClickListener(new View.OnClickListener() {
+        div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 왼쪽 입력창, 오른쪽 입력창 값 얻어오기
+                String lResult = leftVal.getText().toString();
+                String rResult = rightVal.getText().toString();
 
-                String value1 = edit1.getText().toString();
-                String value2 = edit2.getText().toString();
+                // 얻어온 값은 문자이므로 숫자로 바꿔서 더한 결과를 저장
+                int resultInt = Integer.parseInt(lResult) / Integer.parseInt(rResult);
 
-                int valResult = Integer.parseInt(value1) * Integer.parseInt(value2);
+                //결과값 화면에 출력하기
+                // int를 String으로 바꾸는 가장 쉬운 방법은 그냥 빈 문자열을 더하는것.
+                rightTv.setText(resultInt + "");
 
-                result.setText(valResult + "");
-
-                edit1.setText("");
-                edit2.setText("");
+                // 이 코드를 토대로 나머지 연산도 만들어주시고
+                // 다 된 분들은 더하기 연한 수 왼쪽, 오른쪽 입력창 값을 비워주세요.
+                leftVal.setText("");
+                rightVal.setText("");
             }
         });
+
+
     }
 }
