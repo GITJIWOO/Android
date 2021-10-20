@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 텍스트뷰, text="어플 보이기" -->
+
+    <!-- 체크박스, text="체크시 보임" -->
+
+    <!-- 텍스트뷰, text="보고싶은 동물" android:visibility="invisible" -->
+
+    <!-- 라디오그룹, android:visibility="invisible" -->
+
+    <!-- 버튼, text="선택 완료", invisible -->
+
+    <!-- 이미지뷰, 사진가진 동물들 개수만큼 생성 -->
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="어플 보이기"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:text="체크시 보임"
+        app:layout_constraintBottom_toTopOf="@+id/text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:text="보고싶은 오로라"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/choice"
+        app:layout_constraintStart_toStartOf="@+id/text2"
+        app:layout_constraintTop_toBottomOf="@+id/text2">
+
+        <RadioButton
+            android:id="@+id/ground"
+            android:text="평원 오로라" />
+
+        <RadioButton
+            android:id="@+id/mountain"
+            android:text="설산 오로라" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="46dp"
+        android:text="선택 완료"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/mv"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/mv"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="170dp"
+        android:src="@drawable/asdf"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choice" />
+
+    <ImageView
+        android:id="@+id/gv"
+        android:layout_width="131dp"
+        android:layout_height="100dp"
+        android:src="@drawable/qwer"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/mv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mv"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
