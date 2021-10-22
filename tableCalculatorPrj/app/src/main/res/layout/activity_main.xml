@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TableRow>
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/edit1"
+            android:hint="첫 번째 숫자" />
+    </TableRow>
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/edit2"
+            android:hint="두 번째 숫자" />
+    <TableRow>
+        <Button
+            android:id="@+id/btn0"
+            android:text="0"/>
+        <Button
+            android:id="@+id/btn1"
+            android:text="1"/>
+        <Button
+            android:id="@+id/btn2"
+            android:text="2"/>
+        <Button
+            android:id="@+id/btn3"
+            android:text="3"/>
+        <Button
+            android:id="@+id/btn4"
+            android:text="4"/>
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/btn5"
+            android:text="5"/>
+        <Button
+            android:id="@+id/btn6"
+            android:text="6"/>
+        <Button
+            android:id="@+id/btn7"
+            android:text="7"/>
+        <Button
+            android:id="@+id/btn8"
+            android:text="8"/>
+        <Button
+            android:id="@+id/btn9"
+            android:text="9"/>
+    </TableRow>
+    <TableRow>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_span="5"
+            android:id="@+id/btnplus"
+            android:text="+" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_span="5"
+            android:id="@+id/btnmi"
+            android:text="-" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_span="5"
+            android:id="@+id/btnmul"
+            android:text="*" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_span="5"
+            android:id="@+id/btndiv"
+            android:text="/" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="결과" />
+        <TextView
+            android:id="@+id/result"
+            android:layout_span="4"
+            />
+    </TableRow>
+    <TableRow>
+
+    </TableRow>
+    <TableRow>
+
+    </TableRow>
+
+</TableLayout>
